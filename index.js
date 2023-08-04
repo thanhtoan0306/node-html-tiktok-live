@@ -1,16 +1,15 @@
-const http = require('http');
-const runTiktok = require('./app/tiktoklive');
+const express = require('express');
+const app = express();
+const path = require('path');
 
-const PORT = 3000;
+// Setting EJS as templating engine
+app.set("view engine", "ejs");
+app.set("views", "./views");
 
-const server = http.createServer((req, res) => {
-    res.writeHead(200, { 'Content-Type': 'text/html' });
-    res.write('<html><body><h1>Hello World3!</h1></body></html>');
-    res.end();
+// Routing
+app.get('/', (req, res) => {
+    res.render('index');
 });
 
-runTiktok();
-
-server.listen(PORT, () => {
-    console.log(`Server listening on port ${PORT}`);
-});
+// Starting the server
+app.listen(3000);

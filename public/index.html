@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Random Number</title>
+</head>
+
+<body>
+    <h1>Random Number:</h1>
+    <p id="random-number"></p>
+    <script>
+        setInterval(() => {
+            fetch('/random')
+                .then(response => response.json())
+                .then(data => {
+                    const randomNumber = data.number;
+                    const randomNumberElement = document.getElementById('random-number');
+                    randomNumberElement.innerText = randomNumber;
+                });
+        }, 1000);
+    </script>
+</body>
+
+</html>

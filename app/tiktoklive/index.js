@@ -2,12 +2,12 @@ const { WebcastPushConnection } = require('tiktok-live-connector');
 
 
 
-const runTiktok = () => {
+const runTiktok = (tiktokId, io) => {
     // Username of someone who is currently live
     let tiktokUsername = "trangno_hihi";
 
     // Create a new wrapper object and pass the username
-    let tiktokLiveConnection = new WebcastPushConnection(tiktokUsername);
+    let tiktokLiveConnection = new WebcastPushConnection(tiktokId);
 
     // Connect to the chat (await can be used as well)
     tiktokLiveConnection.connect().then(state => {
@@ -20,6 +20,7 @@ const runTiktok = () => {
     // In this case we listen to chat messages (comments)
     tiktokLiveConnection.on('chat', data => {
         console.log(`${data.uniqueId} (userId:${data.userId}) writes: ${data.comment}`);
+        io.emit('chat', data);
     })
 
     // And here we receive gifts sent to the streamer

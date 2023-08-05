@@ -5,7 +5,11 @@ const bodyParser = require('body-parser');
 const io = require('socket.io')(http);
 const path = require('path');
 const { WebcastPushConnection } = require('tiktok-live-connector');
+const runTiktok = require('./app/tiktoklive');
 
+io.on('connection', (socket) => {
+    socket.emit('chat', null);
+});
 
 // Parse JSON bodies
 app.use(bodyParser.json());
@@ -19,16 +23,12 @@ app.post('/submit', (req, res) => {
     // Retrieve the data from the request body
     const inputData = req.body.inputData;
     console.log('Received data:', inputData);
-
-    // Perform any necessary processing
-
+    runTiktok(inputData, io)
     // Send a response back to the client
     res.json({ message: 'Data received successfully' });
 });
 
-io.on('connection', (socket) => {
-    socket.emit('chat', null);
-});
+
 
 
 const runLive = () => {

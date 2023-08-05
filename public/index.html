@@ -7,6 +7,16 @@
     <title>Live Chart</title>
 </head>
 
+<style>
+    #arrayPlotter {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        /* Creates 4 columns */
+        grid-gap: 10px;
+        /* Add some spacing between the items */
+    }
+</style>
+
 <body>
     <h1>TIKTOK LIVE INFO</h1>
     <input id="myInput" placeholder="Input tiktok id" />
@@ -42,7 +52,7 @@
                 } else {
                     plotter.push(data);
                 }
-                
+
                 const validatePlotter = plotter.map(viewer => {
                     return (
                         {
@@ -56,7 +66,12 @@
                 const viewerList = data.topViewers || [];
                 let innerHTML = ""
                 validatePlotter.map(viewer => {
-                    innerHTML += `<span>name: ${viewer.name}</span><img width="50" height="50" src="${viewer.avatar}" />`
+                    innerHTML += `
+                    <div>
+                        <div>${viewer.name}</div>
+                        <div><img width="40" height="40" src="${viewer.avatar}" /></div>
+                    </div>
+                    `
                 })
                 arrayPlotter.innerHTML = innerHTML;
             }

@@ -13,12 +13,52 @@
     <button onclick="submitData()">Connect</button>
     <button onclick="disconnectTitktok()">Disconnect</button>
     <h1>Chat: <span id="chat"></span></h1>
+    <div>
+        <div>Welcome garden</div>
+        <div id="arrayPlotter"></div>
+    </div>
     <script src="/socket.io/socket.io.js"></script>
     <script>
         const socket = io();
+        var arrayPlotter = document.getElementById("arrayPlotter");
+        const modelPlot = {
+            name: '---',
+            avatar: '',
+            userId: 0,
+        }
+        const maxPlotter = 16
+        let plotter = [];
+        let index_replace = 0
 
-        socket.on('roomUser', (data) => {
+        socket.on('member', (data) => {
             console.log(data);
+            if (data) {
+                if (plotter.length >= maxPlotter && index_replace >= maxPlotter - 1) {
+                    const temp = plotter;
+                    plotter = [...temp.slice(0, index_replace), data, ...temp.slice(index_replace + 1)];
+                    index_replace = 0;
+                } else {
+                    plotter.push(data);
+                }
+                index_replace++;
+                const validatePlotter = plotter.map(viewer => {
+                    return (
+                        {
+                            name: viewer.nickname || '---',
+                            avatar: viewer.profilePictureUrl || '',
+                            userId: viewer.userId || 0,
+                        }
+                    )
+                })
+                console.log(validatePlotter);
+                const viewerList = data.topViewers || [];
+                let innerHTML = ""
+                validatePlotter.map(viewer => {
+                    innerHTML += `<div>name: ${viewer.name}</div>`
+                })
+                arrayPlotter.innerHTML = innerHTML;
+            }
+
         });
 
         const submitData = () => {

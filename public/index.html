@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Live Chart</title>
 </head>
+
 <body>
-    <h1>Counter plain html: <span id="counter"></span></h1>
+    <h1>Chat: <span id="chat"></span></h1>
     <script src="/socket.io/socket.io.js"></script>
     <script>
         const socket = io();
-        socket.on('counter', (counter) => {
-            document.getElementById('counter').innerText = counter;
+        socket.on('chat', (data) => {
+            console.log(data);
+            document.getElementById('chat').innerText = data.comment;
         });
     </script>
 </body>
+
 </html>

@@ -33,14 +33,10 @@
         socket.on('member', (data) => {
             console.log(data);
             if (data) {
-                if (plotter.length >= maxPlotter && index_replace >= maxPlotter - 1) {
-                    const temp = plotter;
-                    plotter = [...temp.slice(0, index_replace), data, ...temp.slice(index_replace + 1)];
-                    index_replace = 0;
-                } else {
-                    plotter.push(data);
+                if (plotter.length >= maxPlotter) {
+                    plotter.shift()
                 }
-                index_replace++;
+                plotter.push(data);
                 const validatePlotter = plotter.map(viewer => {
                     return (
                         {

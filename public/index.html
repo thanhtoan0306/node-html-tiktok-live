@@ -34,9 +34,15 @@
             console.log(data);
             if (data) {
                 if (plotter.length >= maxPlotter) {
-                    plotter.shift()
+                    if (index_replace >= maxPlotter - 1) {
+                        index_replace = 0;
+                    }
+                    plotter.splice(index_replace, 1, data);
+                    index_replace++;
+                } else {
+                    plotter.push(data);
                 }
-                plotter.push(data);
+                
                 const validatePlotter = plotter.map(viewer => {
                     return (
                         {

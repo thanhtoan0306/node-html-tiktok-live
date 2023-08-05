@@ -1,13 +1,29 @@
 const express = require('express');
 const app = express();
 const http = require('http').createServer(app);
+const bodyParser = require('body-parser');
 const io = require('socket.io')(http);
 const path = require('path');
 const { WebcastPushConnection } = require('tiktok-live-connector');
 
+
+// Parse JSON bodies
+app.use(bodyParser.json());
+
 app.get('/', (req, res) => {
     const indexHtmlPath = path.join(__dirname, 'public', 'index.html');
     res.sendFile(indexHtmlPath);
+});
+
+app.post('/submit', (req, res) => {
+    // Retrieve the data from the request body
+    const inputData = req.body.inputData;
+    console.log('Received data:', inputData);
+
+    // Perform any necessary processing
+
+    // Send a response back to the client
+    res.json({ message: 'Data received successfully' });
 });
 
 io.on('connection', (socket) => {
@@ -42,7 +58,7 @@ const runLive = () => {
     })
 }
 
-runLive()
+// runLive()
 
 http.listen(3000, () => {
     console.log('Server started on http://localhost:3001');

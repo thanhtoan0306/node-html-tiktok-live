@@ -8,6 +8,10 @@
 </head>
 
 <body>
+    <h1>TIKTOK LIVE INFO</h1>
+    <input id="myInput" placeholder="Input tiktok id" />
+    <button onclick="submitData()">Connect</button>
+    <button>Disconnect</button>
     <h1>Chat: <span id="chat"></span></h1>
     <script src="/socket.io/socket.io.js"></script>
     <script>
@@ -16,6 +20,33 @@
             console.log(data);
             document.getElementById('chat').innerText = data.comment;
         });
+
+        function submitData() {
+            // Retrieve the input value
+            var inputData = document.getElementById("myInput").value;
+
+            // Create a new XMLHttpRequest object
+            var xhr = new XMLHttpRequest();
+
+            // Configure the request
+            xhr.open("POST", "/submit", true);
+            xhr.setRequestHeader("Content-Type", "application/json");
+
+            // Define the callback function when the request is complete
+            xhr.onload = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    // Handle the response from the server
+                    var response = JSON.parse(xhr.responseText);
+                    console.log(response);
+                }
+            };
+
+            // Create a JSON object with the input data
+            var data = JSON.stringify({ inputData: inputData });
+
+            // Send the request
+            xhr.send(data);
+        }
     </script>
 </body>
 

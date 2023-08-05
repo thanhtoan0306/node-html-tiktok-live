@@ -1,16 +1,26 @@
-const http = require('http');
-const runTiktok = require('./app/tiktoklive');
+const express = require('express');
+const app = express();
+const ejs = require('ejs');
+const http = require('http').createServer(app);
+const io = require('socket.io')(http);
 
-const PORT = 3000;
+let counter = 0;
 
-const server = http.createServer((req, res) => {
-    res.writeHead(200, { 'Content-Type': 'text/html' });
-    res.write('<html><body><h1>Hello World3!</h1></body></html>');
-    res.end();
+app.set('view engine', 'ejs');
+
+app.get('/', (req, res) => {
+    res.render('index', { counter });
 });
 
-runTiktok();
+io.on('connection', (socket) => {
+    socket.emit('counter', counter);
+});
 
-server.listen(PORT, () => {
-    console.log(`Server listening on port ${PORT}`);
+setInterval(() => {
+    counter++;
+    io.emit('counter', counter);
+}, 1000);
+
+http.listen(3000, () => {
+    console.log('Server started on http://localhost:3000');
 });

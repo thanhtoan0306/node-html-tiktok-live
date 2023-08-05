@@ -16,9 +16,9 @@
     <script src="/socket.io/socket.io.js"></script>
     <script>
         const socket = io();
-        socket.on('chat', (data) => {
+
+        socket.on('roomUser', (data) => {
             console.log(data);
-            document.getElementById('chat').innerText = data.comment;
         });
 
         const submitData = () => {

@@ -22,6 +22,14 @@ const runTiktok = (tiktokId, io) => {
         io.emit('chat', data);
     })
 
+    tiktokLiveConnection.on('roomUser', data => {
+        io.emit('roomUser', data);
+    })
+
+    tiktokLiveConnection.on('member', data => {
+        io.emit('member', data);
+    })
+
     return tiktokLiveConnection;
 }
 

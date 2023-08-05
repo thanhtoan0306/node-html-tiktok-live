@@ -1,13 +1,12 @@
 const { WebcastPushConnection } = require('tiktok-live-connector');
-
-
+// Create a new wrapper object and pass the username
 
 const runTiktok = (tiktokId, io) => {
-    // Username of someone who is currently live
-    let tiktokUsername = "trangno_hihi";
-
-    // Create a new wrapper object and pass the username
     let tiktokLiveConnection = new WebcastPushConnection(tiktokId);
+    //communicate to frontent
+    io.on('connection', (socket) => {
+        socket.emit('chat', null);
+    });
 
     // Connect to the chat (await can be used as well)
     tiktokLiveConnection.connect().then(state => {
@@ -23,12 +22,16 @@ const runTiktok = (tiktokId, io) => {
         io.emit('chat', data);
     })
 
-    // And here we receive gifts sent to the streamer
-    tiktokLiveConnection.on('gift', data => {
-        console.log(`${data.uniqueId} (userId:${data.userId}) sends ${data.giftId}`);
-    })
+    return tiktokLiveConnection;
 }
 
-// ...and more events described in the documentation below
+const stopTiktok = (tiktokLiveConnection) => {
+    if (tiktokLiveConnection) {
+        tiktokLiveConnection.disconnect();
+    }
+}
 
-module.exports = runTiktok;
+module.exports = {
+    runTiktok,
+    stopTiktok
+};

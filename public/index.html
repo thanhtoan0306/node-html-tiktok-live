@@ -11,7 +11,7 @@
     <h1>TIKTOK LIVE INFO</h1>
     <input id="myInput" placeholder="Input tiktok id" />
     <button onclick="submitData()">Connect</button>
-    <button>Disconnect</button>
+    <button onclick="disconnectTitktok()">Disconnect</button>
     <h1>Chat: <span id="chat"></span></h1>
     <script src="/socket.io/socket.io.js"></script>
     <script>
@@ -21,7 +21,7 @@
             document.getElementById('chat').innerText = data.comment;
         });
 
-        function submitData() {
+        const submitData = () => {
             // Retrieve the input value
             var inputData = document.getElementById("myInput").value;
 
@@ -34,8 +34,21 @@
             })
                 .then(response => response.json())
                 .then(data => console.log(data))
-                .catch(error => console.log(error)); 
+                .catch(error => console.log(error));
         }
+
+        const disconnectTitktok = () => {
+
+            fetch('/stop', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+            })
+                .then(response => response.json())
+                .then(data => console.log(data))
+                .catch(error => console.log(error));
+        } 
     </script>
 </body>
 

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Counter Example</title>
+</head>
+
+<body>
+    <h1>Counter: <span id="counter"></span></h1>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        const socket = io();
+        socket.on('counter', (counter) => {
+            document.getElementById('counter').innerText = counter;
+        });
+    </script>
+</body>
+
+</html>

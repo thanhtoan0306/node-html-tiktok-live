@@ -18,7 +18,6 @@ const runTiktok = (tiktokId, io) => {
     // Define the events that you want to handle
     // In this case we listen to chat messages (comments)
     tiktokLiveConnection.on('chat', data => {
-        console.log(`${data.uniqueId} (userId:${data.userId}) writes: ${data.comment}`);
         io.emit('chat', data);
     })
 

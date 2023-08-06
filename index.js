@@ -19,7 +19,6 @@ let instanceTiktok = null;
 app.post('/submit', (req, res) => {
     // Retrieve the data from the request body
     const inputData = req.body.inputData;
-    console.log('Received data:', inputData);
     instanceTiktok = runTiktok(inputData, io)
     // Send a response back to the client
     res.json({ message: 'Data received successfully' });
@@ -32,5 +31,4 @@ app.post('/stop', (req, res) => {
 });
 
 http.listen(3000, () => {
-    console.log('Server started on http://localhost:3001');
 });

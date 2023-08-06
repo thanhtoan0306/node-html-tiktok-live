@@ -11,11 +11,14 @@
     body {
         background-color: bisque;
         font-family: sans-serif;
+        background-size: cover;
+  background-repeat: no-repeat;
+        background-image: url('https://i.pinimg.com/736x/d9/c8/3f/d9c83f2161a73877bd9331a6758ebb5c.jpg');
     }
 
     .body {
         padding-left: 30px;
-
+        padding-top: 60px;
         height: 100vh;
     }
 
@@ -30,7 +33,7 @@
 
     .viewer-name {
         max-width: 80px;
-        white-space: nowrap;
+        /* white-space: nowrap; */
         /* Prevents text from wrapping */
         overflow: hidden;
         /* Hides any overflowing text */
@@ -40,12 +43,26 @@
         font-weight: 700;
         background-color: #f9a018 ;
         line-height: 22px;
-        color: white;
+        color: black;
         position: absolute;
         top: -50px;
         left: -20px;
         padding: 0 3px;
+        text-align: center;
     }
+
+    .neonText {
+  color: #fff;
+  text-shadow:
+      0 0 7px #fff,
+      0 0 10px #fff,
+      0 0 21px #fff,
+      0 0 42px #0fa,
+      0 0 82px #0fa,
+      0 0 92px #0fa,
+      0 0 102px #0fa,
+      0 0 151px #0fa;
+}
 
     .viewer-avatar {
         width: 40px;
@@ -55,9 +72,9 @@
 
     #arrayPlotter {
         display: grid;
-        grid-template-columns: repeat(6, 1fr);
+        grid-template-columns: repeat(5, 1fr);
         /* Creates 4 columns */
-        grid-gap: 120px 50px;
+        grid-gap: 200px 50px;
     }
 
     /* flower */
@@ -82,37 +99,7 @@
         top: 55px;
         transform-origin: 50% -7px;
         user-select: none;
-    }
-
-    .head .eye {
-        background: #43699a;
-        border-radius: 10px;
-        height: 5px;
-        position: absolute;
-        top: 30px;
-        width: 5px;
-    }
-
-    .head .eye#eye-1 {
-        left: 17px;
-        animation: eye 4s linear infinite normal 0.5s;
-    }
-
-    .head .eye#eye-2 {
-        right: 17px;
-        animation: eye 4s linear infinite normal 0.5s;
-    }
-
-    .head .mouth {
-        background: #ecf0f1;
-        border-radius: 30px;
-        bottom: 2px;
-        clip: rect(8px, 15px, 16px, 0);
-        height: 16px;
-        margin-left: -7.5px;
-        position: absolute;
-        left: 50%;
-        width: 15px;
+        text-align: center;
     }
 
     .petals {
@@ -306,15 +293,11 @@
         }
     }
 
-    body {
-        background: #ffffff;
-        text-align: center;
-    }
 </style>
 
 <body>
     <div class="body">
-        <h1>WELCOME GARDEN</h1>
+        <h1 class="neonText">WELCOME GARDEN</h1>
         <div class="main">
             <div class="live-view">
                 <div id="arrayPlotter">
@@ -333,152 +316,6 @@
                             <div class="viewer-name">${viewer.name}</div>
                         </div>
                     </div>
-                    <div id="position" class="sunflower">
-                        <div class="head">
-                            <div id="eye-1" class="eye"></div>
-                            <div id="eye-2" class="eye"></div>
-                            <div class="mouth"></div>
-                        </div>
-                        <div class="petals"></div>
-                        <div class="trunk">
-                            <div class="left-branch"></div>
-                            <div class="right-branch"></div>
-                        </div>
-                        <div class="vase"></div>
-                    </div>
-                    <div id="position" class="sunflower">
-                        <div class="head">
-                            <div id="eye-1" class="eye"></div>
-                            <div id="eye-2" class="eye"></div>
-                            <div class="mouth"></div>
-                        </div>
-                        <div class="petals"></div>
-                        <div class="trunk">
-                            <div class="left-branch"></div>
-                            <div class="right-branch"></div>
-                        </div>
-                        <div class="vase"></div>
-                    </div>
-                    <div id="position" class="sunflower">
-                        <div class="head">
-                            <div id="eye-1" class="eye"></div>
-                            <div id="eye-2" class="eye"></div>
-                            <div class="mouth"></div>
-                        </div>
-                        <div class="petals"></div>
-                        <div class="trunk">
-                            <div class="left-branch"></div>
-                            <div class="right-branch"></div>
-                        </div>
-                        <div class="vase"></div>
-                    </div>
-                    <div id="position" class="sunflower">
-                        <div class="head">
-                            <div id="eye-1" class="eye"></div>
-                            <div id="eye-2" class="eye"></div>
-                            <div class="mouth"></div>
-                        </div>
-                        <div class="petals"></div>
-                        <div class="trunk">
-                            <div class="left-branch"></div>
-                            <div class="right-branch"></div>
-                        </div>
-                        <div class="vase"></div>
-                    </div>
-                    <div id="position" class="sunflower">
-                        <div class="head">
-                            <div id="eye-1" class="eye"></div>
-                            <div id="eye-2" class="eye"></div>
-                            <div class="mouth"></div>
-                        </div>
-                        <div class="petals"></div>
-                        <div class="trunk">
-                            <div class="left-branch"></div>
-                            <div class="right-branch"></div>
-                        </div>
-                        <div class="vase"></div>
-                    </div>
-                    <div id="position" class="sunflower">
-                        <div class="head">
-                            <div id="eye-1" class="eye"></div>
-                            <div id="eye-2" class="eye"></div>
-                            <div class="mouth"></div>
-                        </div>
-                        <div class="petals"></div>
-                        <div class="trunk">
-                            <div class="left-branch"></div>
-                            <div class="right-branch"></div>
-                        </div>
-                        <div class="vase"></div>
-                    </div>
-                    <div id="position" class="sunflower">
-                        <div class="head">
-                            <div id="eye-1" class="eye"></div>
-                            <div id="eye-2" class="eye"></div>
-                            <div class="mouth"></div>
-                        </div>
-                        <div class="petals"></div>
-                        <div class="trunk">
-                            <div class="left-branch"></div>
-                            <div class="right-branch"></div>
-                        </div>
-                        <div class="vase"></div>
-                    </div>
-                    <div id="position" class="sunflower">
-                        <div class="head">
-                            <div id="eye-1" class="eye"></div>
-                            <div id="eye-2" class="eye"></div>
-                            <div class="mouth"></div>
-                        </div>
-                        <div class="petals"></div>
-                        <div class="trunk">
-                            <div class="left-branch"></div>
-                            <div class="right-branch"></div>
-                        </div>
-                        <div class="vase"></div>
-                    </div>
-                    <!-- <div>
-                        <div class="viewer-name">${viewer.name}</div>
-                        <div><img class="viewer-avatar"
-                                src="https://www.richardtmoore.co.uk/wp-content/uploads/2016/10/btx-avatar-placeholder-01-2.jpg" />
-                        </div>
-                    </div>
-                    <div>
-                        <div class="viewer-name">${viewer.name}</div>
-                        <div><img class="viewer-avatar"
-                                src="https://www.richardtmoore.co.uk/wp-content/uploads/2016/10/btx-avatar-placeholder-01-2.jpg" />
-                        </div>
-                    </div>
-                    <div>
-                        <div class="viewer-name">${viewer.name}</div>
-                        <div><img class="viewer-avatar"
-                                src="https://www.richardtmoore.co.uk/wp-content/uploads/2016/10/btx-avatar-placeholder-01-2.jpg" />
-                        </div>
-                    </div>
-                    <div>
-                        <div class="viewer-name">${viewer.name}</div>
-                        <div><img class="viewer-avatar"
-                                src="https://www.richardtmoore.co.uk/wp-content/uploads/2016/10/btx-avatar-placeholder-01-2.jpg" />
-                        </div>
-                    </div>
-                    <div>
-                        <div class="viewer-name">${viewer.name}</div>
-                        <div><img class="viewer-avatar"
-                                src="https://www.richardtmoore.co.uk/wp-content/uploads/2016/10/btx-avatar-placeholder-01-2.jpg}" />
-                        </div>
-                    </div>
-                    <div>
-                        <div class="viewer-name">${viewer.name}</div>
-                        <div><img class="viewer-avatar"
-                                src="https://www.richardtmoore.co.uk/wp-content/uploads/2016/10/btx-avatar-placeholder-01-2.jpg}" />
-                        </div>
-                    </div>
-                    <div>
-                        <div class="viewer-name">${viewer.name}</div>
-                        <div><img class="viewer-avatar"
-                                src="https://www.richardtmoore.co.uk/wp-content/uploads/2016/10/btx-avatar-placeholder-01-2.jpg}" />
-                        </div>
-                    </div> -->
                 </div>
             </div>
             <div class="control-view">
@@ -500,7 +337,7 @@
             },
 
         ]
-        const maxPlotter = 16
+        const maxPlotter = 15
         let plotter = [];
         let index_replace = 0
 
@@ -529,9 +366,20 @@
                 let innerHTML = ""
                 validatePlotter.map(viewer => {
                     innerHTML += `
-                    <div>
-                        <div class="viewer-name">${viewer.name}</div>
-                        <div><img class="viewer-avatar" src="${viewer.avatar}" /></div>
+                    <div id="position" class="sunflower">
+                        <div class="head">
+                            <div><img class="viewer-avatar"
+                                    src="${viewer.avatar}" />
+                            </div>
+                        </div>
+                        <div class="petals"></div>
+                        <div class="trunk">
+                            <div class="left-branch"></div>
+                            <div class="right-branch"></div>
+                        </div>
+                        <div class="vase">
+                            <div class="viewer-name">${viewer.name}</div>
+                        </div>
                     </div>
                     `
                 })

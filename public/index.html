@@ -15,6 +15,10 @@
       margin: 0;
       font-family: "Roboto", sans-serif;
     }
+    .control-view {
+      position: fixed;
+      top: 0;
+    }
     .live-view {
       height: 100vh;
       background-color: #171717;
@@ -93,9 +97,13 @@
     <div class="body">
       <div class="main">
         <div class="control-view">
-          <input id="myInput" placeholder="Input tiktok id" />
-          <button onclick="submitData()">Connect</button>
-          <button onclick="disconnectTitktok()">Disconnect</button>
+          <input
+            style="width: 10px"
+            id="myInput"
+            placeholder="Input tiktok id"
+          />
+          <button onclick="submitData()">C</button>
+          <button onclick="disconnectTitktok()">D</button>
         </div>
         <div class="live-view" id="live-view">
           <div class="avatar-user card">
@@ -129,7 +137,10 @@
         if (data) {
           console.log("member-log", data);
           const customer = {
-            avatar: data.profilePictureUrl || "",
+            avatar:
+              data?.userDetails?.profilePictureUrls[2] ||
+              data.profilePictureUrl ||
+              "",
             name: data.nickname || "---",
           };
           let innerHTML = `

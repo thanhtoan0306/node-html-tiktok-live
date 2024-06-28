@@ -9,6 +9,9 @@ const { runTiktok, stopTiktok } = require('./app/tiktoklive');
 // Parse JSON bodies
 app.use(bodyParser.json());
 
+// Serve static files from the 'public' directory
+app.use(express.static(path.join(__dirname, 'public')));
+
 app.get('/', (req, res) => {
     const indexHtmlPath = path.join(__dirname, 'public', 'index.html');
     res.sendFile(indexHtmlPath);

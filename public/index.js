@@ -16,7 +16,7 @@ const SCHOOL_LIST = [
   },
   {
     name: "Khoa học Xã hội và Nhân văn",
-    code: "USSH",
+    code: "XHNV",
     avatar:
       "https://upload.wikimedia.org/wikipedia/vi/4/49/Logo_Tr%C6%B0%E1%BB%9Dng_%C4%90%E1%BA%A1i_h%E1%BB%8Dc_Khoa_h%E1%BB%8Dc_X%C3%A3_h%E1%BB%99i_v%C3%A0_Nh%C3%A2n_v%C4%83n%2C_%C4%90%E1%BA%A1i_h%E1%BB%8Dc_Qu%E1%BB%91c_gia_Th%C3%A0nh_ph%E1%BB%91_H%E1%BB%93_Ch%C3%AD_Minh.svg",
     votes: 0,
@@ -66,20 +66,20 @@ const SCHOOL_LIST = [
   },
   {
     name: "Ngoại thương Cơ sở 2",
-    code: "FTU",
+    code: "FT",
     avatar: "https://upload.wikimedia.org/wikipedia/vi/8/8e/FTU_logo_2020.png",
     votes: 0,
   },
   {
     name: "Y Dược",
-    code: "YDS",
+    code: "YD",
     avatar:
       "https://upload.wikimedia.org/wikipedia/vi/thumb/6/64/Logo_%C4%90%E1%BA%A1i_h%E1%BB%8Dc_Y_D%C6%B0%E1%BB%A3c_Th%C3%A0nh_ph%E1%BB%91_H%E1%BB%93_Ch%C3%AD_Minh.svg/2048px-Logo_%C4%90%E1%BA%A1i_h%E1%BB%8Dc_Y_D%C6%B0%E1%BB%A3c_Th%C3%A0nh_ph%E1%BB%91_H%E1%BB%93_Ch%C3%AD_Minh.svg.png",
     votes: 0,
   },
   {
     name: "Nông Lâm",
-    code: "NLU",
+    code: "UNL",
     avatar:
       "https://upload.wikimedia.org/wikipedia/vi/thumb/e/e1/Logo_HCMUAF.svg/480px-Logo_HCMUAF.svg.png",
     votes: 0,
@@ -93,7 +93,7 @@ const SCHOOL_LIST = [
   },
   {
     name: "Giao thông Vận tải TP.HCM",
-    code: "UTH",
+    code: "GT",
     avatar:
       "https://cdn.haitrieu.com/wp-content/uploads/2022/02/Logo-DH-Giao-Thong-Van-Tai-TPHCM-HCMUT.png",
     votes: 0,
@@ -114,7 +114,7 @@ const SCHOOL_LIST = [
   },
   {
     name: "Công nghiệp",
-    code: "IUH",
+    code: "HUI",
     avatar:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUsqZtPyVKf9ZxWnrDIYkDNTl7hdiGR-yV4cHjuRy0O-L0catvyE1Y_tiliItF0UY_6cU&usqp=CAU",
     votes: 0,
@@ -128,7 +128,7 @@ const SCHOOL_LIST = [
   },
   {
     name: " Văn Lang",
-    code: "VLU",
+    code: "VLUNI",
     avatar:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXwb-2FG_reF42BgZN6vvm-aIq5u0s9yyE2A&s",
     votes: 0,
@@ -142,7 +142,7 @@ const SCHOOL_LIST = [
   },
   {
     name: "Kiến trúc",
-    code: "UAH",
+    code: "KT",
     avatar:
       "https://upload.wikimedia.org/wikipedia/commons/0/0b/Logo_of_University_of_Architecture_Ho_Chi_Minh_City.png",
     votes: 0,
@@ -197,7 +197,7 @@ socket.on("chat", (data) => {
                   />
                 </div>
               </div>
-              <div class="code-uni">${listRank[0].votes}</div>
+              <div class="code-uni">${listRank[0].votes} đ</div>
               <div style="height: ${
                 (listRank[0].votes / totalVotes) * 400
               }px" class="column-rank">
@@ -223,7 +223,7 @@ socket.on("chat", (data) => {
                   />
                 </div>
               </div>
-              <div class="code-uni">${listRank[1].votes}</div>
+              <div class="code-uni">${listRank[1].votes} đ</div>
               <div style="height: ${
                 (listRank[1].votes / totalVotes) * 400
               }px" class="column-rank"> </div>
@@ -244,7 +244,7 @@ socket.on("chat", (data) => {
                   />
                 </div>
               </div>
-              <div class="code-uni">${listRank[2].votes}</div>
+              <div class="code-uni">${listRank[2].votes} đ</div>
               <div style="height: ${
                 (listRank[2].votes / totalVotes) * 400
               }px" class="column-rank"> </div>
@@ -270,9 +270,7 @@ socket.on("chat", (data) => {
                     </div>
                     <div class="user__content">
                       <div class="text">
-                        <div>${schoolItem.code} : ${
-            schoolItem.votes
-          } votes</div>
+                        <div>${schoolItem.code} : ${schoolItem.votes} đ</div>
                       </div>
                       <button class="follow">Top ${index + 1}</button>
                     </div>
@@ -298,9 +296,7 @@ socket.on("chat", (data) => {
                     </div>
                     <div class="user__content">
                       <div class="text">
-                        <div>${schoolItem.code} : ${
-            schoolItem.votes
-          } votes</div>
+                        <div>${schoolItem.code} : ${schoolItem.votes} đ</div>
                       </div>
                       <button class="follow">Top ${index + 1}</button>
                     </div>

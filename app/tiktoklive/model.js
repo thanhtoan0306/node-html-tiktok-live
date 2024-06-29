@@ -13,7 +13,7 @@ const SCHOOL_LIST = [
   },
   {
     name: "Khoa học Xã hội và Nhân văn",
-    code: "USSH",
+    code: "NV",
     avatar: "",
     votes: 0,
   },

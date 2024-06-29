@@ -70,6 +70,72 @@ const SCHOOL_LIST = [
     avatar: "",
     votes: 0,
   },
+  {
+    name: "Unknown",
+    code: "DDD",
+    avatar: "",
+    votes: 0,
+  },
+  {
+    name: "Unknown",
+    code: "DDD",
+    avatar: "",
+    votes: 0,
+  },
+  {
+    name: "Unknown",
+    code: "DDD",
+    avatar: "",
+    votes: 0,
+  },
+  {
+    name: "Unknown",
+    code: "DDD",
+    avatar: "",
+    votes: 0,
+  },
+  {
+    name: "Unknown",
+    code: "DDD",
+    avatar: "",
+    votes: 0,
+  },
+  {
+    name: "Unknown",
+    code: "DDD",
+    avatar: "",
+    votes: 0,
+  },
+  {
+    name: "Unknown",
+    code: "DDD",
+    avatar: "",
+    votes: 0,
+  },
+  {
+    name: "Unknown",
+    code: "DDD",
+    avatar: "",
+    votes: 0,
+  },
+  {
+    name: "Unknown",
+    code: "DDD",
+    avatar: "",
+    votes: 0,
+  },
+  {
+    name: "Unknown",
+    code: "DDD",
+    avatar: "",
+    votes: 0,
+  },
+  {
+    name: "Unknown",
+    code: "DDD",
+    avatar: "",
+    votes: 0,
+  },
 ];
 let listRank = SCHOOL_LIST;
 let totalVotes = 1;
@@ -168,7 +234,9 @@ socket.on("chat", (data) => {
                 </div>
               </div>
               <div class="code-uni">${listRank[1].votes}</div>
-              <div style="height: 400px" class="column-rank"></div>
+              <div style="height: ${
+                (listRank[1].votes / totalVotes) * 400
+              }px" class="column-rank"> </div>
               <div class="code-uni">Top 2 - ${listRank[1].code}</div>
             </div>     
       `;
@@ -187,14 +255,16 @@ socket.on("chat", (data) => {
                 </div>
               </div>
               <div class="code-uni">${listRank[2].votes}</div>
-              <div style="height: 400px" class="column-rank"></div>
+              <div style="height: ${
+                (listRank[2].votes / totalVotes) * 400
+              }px" class="column-rank"> </div>
               <div class="code-uni">Top 3 - ${listRank[2].code}</div>
             </div>     
       `;
       top3Node.innerHTML = innerHTMLTop3;
       var top4Node = document.getElementById("top4");
       listRank.forEach((schoolItem, index) => {
-        if (index > 2 && index < 10) {
+        if (index > 2 && index < 13) {
           const schoolItemNode = document.createElement("div");
           schoolItemNode.className = "user";
           const innerHTMLSchool = `
@@ -214,6 +284,30 @@ socket.on("chat", (data) => {
         `;
           schoolItemNode.innerHTML = innerHTMLSchool;
           top4Node.appendChild(schoolItemNode);
+        }
+      });
+      var top13Node = document.getElementById("top13");
+      listRank.forEach((schoolItem, index) => {
+        if (index > 13 && index < 21) {
+          const schoolItemNode = document.createElement("div");
+          schoolItemNode.className = "user";
+          const innerHTMLSchool = `
+         <div class="image">
+                      <img
+                        src="${schoolItem.avatar}"
+                      />
+                    </div>
+                    <div class="user__content">
+                      <div class="text">
+                        <div>${schoolItem.code} : ${
+            schoolItem.votes
+          } votes</div>
+                      </div>
+                      <button class="follow">Top ${index + 1}</button>
+                    </div>
+        `;
+          schoolItemNode.innerHTML = innerHTMLSchool;
+          top13Node.appendChild(schoolItemNode);
         }
       });
     }

@@ -8,6 +8,13 @@ const SCHOOL_LIST = [
     votes: 0,
   },
   {
+    name: "Bách khoa",
+    code: "BKA",
+    avatar:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOq8y1ujU7NbHbUitI9x8awQtGTYeibk1JLw&s",
+    votes: 0,
+  },
+  {
     name: "Khoa học Xã hội và Nhân văn",
     code: "USSH",
     avatar:
@@ -17,163 +24,146 @@ const SCHOOL_LIST = [
   {
     name: "Luật",
     code: "UL",
-    avatar: "",
+    avatar:
+      "https://inkythuatso.com/uploads/images/2021/12/logo-dai-hoc-luat-tphcm-inkythuatso-01-21-10-13-41.jpg",
     votes: 0,
   },
 
   {
-    name: "Bách khoa",
-    code: "BKA",
-    avatar:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOq8y1ujU7NbHbUitI9x8awQtGTYeibk1JLw&s",
-    votes: 0,
-  },
-  {
     name: "Khoa học Tự nhiên",
     code: "US",
-    avatar: "",
+    avatar:
+      "https://upload.wikimedia.org/wikipedia/commons/4/4b/Logo-dai-hoc-khoa-hoc-tu-nhien.png",
     votes: 0,
   },
   {
     name: "Công nghệ Thông tin",
     code: "UIT",
-    avatar: "",
+    avatar:
+      "https://upload.wikimedia.org/wikipedia/commons/0/00/Logo_UIT_updated.svg",
     votes: 0,
   },
   {
     name: "Kinh tế Luật",
     code: "UEL",
-    avatar: "",
+    avatar:
+      "https://upload.wikimedia.org/wikipedia/commons/8/86/Logo_Tr%C6%B0%E1%BB%9Dng_%C4%90%E1%BA%A1i_h%E1%BB%8Dc_Kinh_t%E1%BA%BF_-_Lu%E1%BA%ADt.png",
     votes: 0,
   },
   {
     name: "Quốc tế",
     code: "IU",
-    avatar: "",
+    avatar:
+      "https://hcmiu.edu.vn/wp-content/uploads/2017/08/logo-vector-IU-01.png",
     votes: 0,
   },
   {
     name: "Sư phạm",
     code: "SPS",
-    avatar: "",
+    avatar:
+      "https://upload.wikimedia.org/wikipedia/vi/9/9e/Logo_Tr%C6%B0%E1%BB%9Dng_%C4%90%E1%BA%A1i_h%E1%BB%8Dc_S%C6%B0_ph%E1%BA%A1m_Th%C3%A0nh_ph%E1%BB%91_H%E1%BB%93_Ch%C3%AD_Minh.svg",
     votes: 0,
   },
   {
     name: "Ngoại thương Cơ sở 2",
     code: "FTU",
-    avatar: "",
+    avatar: "https://upload.wikimedia.org/wikipedia/vi/8/8e/FTU_logo_2020.png",
     votes: 0,
   },
   {
     name: "Y Dược",
     code: "YDS",
-    avatar: "",
+    avatar:
+      "https://upload.wikimedia.org/wikipedia/vi/thumb/6/64/Logo_%C4%90%E1%BA%A1i_h%E1%BB%8Dc_Y_D%C6%B0%E1%BB%A3c_Th%C3%A0nh_ph%E1%BB%91_H%E1%BB%93_Ch%C3%AD_Minh.svg/2048px-Logo_%C4%90%E1%BA%A1i_h%E1%BB%8Dc_Y_D%C6%B0%E1%BB%A3c_Th%C3%A0nh_ph%E1%BB%91_H%E1%BB%93_Ch%C3%AD_Minh.svg.png",
     votes: 0,
   },
   {
-    name: "Unknown",
-    code: "DDD",
-    avatar: "",
+    name: "Nông Lâm",
+    code: "NLU",
+    avatar:
+      "https://upload.wikimedia.org/wikipedia/vi/thumb/e/e1/Logo_HCMUAF.svg/480px-Logo_HCMUAF.svg.png",
     votes: 0,
   },
   {
-    name: "Unknown",
-    code: "DDD",
-    avatar: "",
+    name: "Ngân hàng",
+    code: "HUB",
+    avatar:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/New-hub-logo.jpg/480px-New-hub-logo.jpg",
     votes: 0,
   },
   {
-    name: "Unknown",
-    code: "DDD",
-    avatar: "",
+    name: "Giao thông Vận tải TP.HCM",
+    code: "UTH",
+    avatar:
+      "https://cdn.haitrieu.com/wp-content/uploads/2022/02/Logo-DH-Giao-Thong-Van-Tai-TPHCM-HCMUT.png",
     votes: 0,
   },
   {
-    name: "Unknown",
-    code: "DDD",
-    avatar: "",
+    name: "Tôn Đức Thắng",
+    code: "TDT",
+    avatar:
+      "https://upload.wikimedia.org/wikipedia/vi/thumb/1/1b/T%C4%90T_logo.png/480px-T%C4%90T_logo.png",
     votes: 0,
   },
   {
-    name: "Unknown",
-    code: "DDD",
-    avatar: "",
+    name: "HUTECH",
+    code: "HUTECH",
+    avatar:
+      "https://upload.wikimedia.org/wikipedia/vi/8/81/Logo_Tr%C6%B0%E1%BB%9Dng_%C4%90%E1%BA%A1i_h%E1%BB%8Dc_C%C3%B4ng_ngh%E1%BB%87_Th%C3%A0nh_ph%E1%BB%91_H%E1%BB%93_Ch%C3%AD_Minh.png",
     votes: 0,
   },
   {
-    name: "Unknown",
-    code: "DDD",
-    avatar: "",
+    name: "Công nghiệp",
+    code: "IUH",
+    avatar:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUsqZtPyVKf9ZxWnrDIYkDNTl7hdiGR-yV4cHjuRy0O-L0catvyE1Y_tiliItF0UY_6cU&usqp=CAU",
     votes: 0,
   },
   {
-    name: "Unknown",
-    code: "DDD",
-    avatar: "",
+    name: "Đại học Mở TP.HCM",
+    code: "OU",
+    avatar:
+      "https://upload.wikimedia.org/wikipedia/vi/b/b2/Logo_%C4%90%E1%BA%A1i_h%E1%BB%8Dc_M%E1%BB%9F_TPHCM.png",
     votes: 0,
   },
   {
-    name: "Unknown",
-    code: "DDD",
-    avatar: "",
+    name: " Văn Lang",
+    code: "VLU",
+    avatar:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXwb-2FG_reF42BgZN6vvm-aIq5u0s9yyE2A&s",
     votes: 0,
   },
   {
-    name: "Unknown",
-    code: "DDD",
-    avatar: "",
+    name: "RMIT",
+    code: "RMIT",
+    avatar:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/RMIT_University_Logo.svg/480px-RMIT_University_Logo.svg.png",
     votes: 0,
   },
   {
-    name: "Unknown",
-    code: "DDD",
-    avatar: "",
+    name: "Kiến trúc",
+    code: "UAH",
+    avatar:
+      "https://upload.wikimedia.org/wikipedia/commons/0/0b/Logo_of_University_of_Architecture_Ho_Chi_Minh_City.png",
     votes: 0,
   },
   {
-    name: "Unknown",
-    code: "DDD",
-    avatar: "",
+    name: "KOHOC",
+    code: "KOHOC",
+    avatar:
+      "https://www.reynolds.k12.or.us/sites/default/files/styles/gallery500/public/imageattachments/woodland/page/4598/no_school.png?itok=wYmMKc7n",
+    votes: 0,
+  },
+  {
+    name: "TIKTOK",
+    code: "TIKTOK",
+    avatar:
+      "https://sf-static.tiktokcdn.com/obj/eden-sg/uhtyvueh7nulogpoguhm/tiktok-icon2.png",
     votes: 0,
   },
 ];
 let listRank = SCHOOL_LIST;
 let totalVotes = 1;
-// var liveNode = document.getElementById("live-view");
-// const modelPlots = [
-//   {
-//     name: "---",
-//     avatar: "",
-//     userId: 0,
-//   },
-// ];
-// const maxPlotter = 15;
-// let plotter = [];
-// let index_replace = 0;
-
-// socket.on("member", (data) => {
-//   if (data) {
-//     console.log("member-log", data);
-//     const customer = {
-//       avatar:
-//         data?.userDetails?.profilePictureUrls[2] ||
-//         data.profilePictureUrl ||
-//         "",
-//       name: data.nickname || "---",
-//     };
-//     let innerHTML = `
-//     <div class="avatar-user card">
-//       <div class="shadow"></div>
-//       <img
-//         src="${customer.avatar}"
-//       />
-//     </div>
-//     <div class="name-user typewriter content">
-//       <h1 class="name">${customer.name}</h1>
-//     </div>`;
-//     liveNode.innerHTML = innerHTML;
-//   }
-// });
 
 socket.on("chat", (data) => {
   if (data) {
@@ -263,6 +253,11 @@ socket.on("chat", (data) => {
       `;
       top3Node.innerHTML = innerHTMLTop3;
       var top4Node = document.getElementById("top4");
+
+      // Remove all child elements
+      while (top4Node.firstChild) {
+        top4Node.removeChild(top4Node.firstChild);
+      }
       listRank.forEach((schoolItem, index) => {
         if (index > 2 && index < 13) {
           const schoolItemNode = document.createElement("div");
@@ -287,8 +282,12 @@ socket.on("chat", (data) => {
         }
       });
       var top13Node = document.getElementById("top13");
+      // Remove all child elements
+      while (top13Node.firstChild) {
+        top13Node.removeChild(top13Node.firstChild);
+      }
       listRank.forEach((schoolItem, index) => {
-        if (index > 13 && index < 21) {
+        if (index > 12 && index < 23) {
           const schoolItemNode = document.createElement("div");
           schoolItemNode.className = "user";
           const innerHTMLSchool = `

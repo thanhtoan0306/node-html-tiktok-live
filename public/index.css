@@ -24,6 +24,13 @@ body {
   justify-content: space-around;
   gap: 30px;
 }
+#top1,
+#top2,
+#top3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
 .column-rank {
   background-color: #ff3cac;
   background-image: linear-gradient(
@@ -65,8 +72,10 @@ body {
   /* flex: 1 */
 }
 .img-uni {
-  width: auto;
-  height: 180px;
+  /* height: auto; */
+  /* max-width: 180px; */
+  width: 180px;
+  object-fit: contain;
 }
 
 .card {
